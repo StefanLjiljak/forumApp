@@ -1,0 +1,11 @@
+@import '../mixins';
+
+.register-container {
+    width:100vw;
+    height:10rem;
+    @include alignMe(center,center);
+    .register-form {
+        flex-direction:column;
+        @include alignMe(space-around, center);
+    }
+}

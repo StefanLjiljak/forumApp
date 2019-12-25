@@ -1,0 +1,17 @@
+@import '../mixins';
+
+.login-container {
+    width:100vw;
+    height:10rem;
+    @include alignMe(center,center);
+    .login-form {
+        @include alignMe(space-around, center);
+        flex-direction:column;
+        .username {
+
+        }
+        .password {
+            
+        }
+    }
+}
