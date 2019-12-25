@@ -24,7 +24,7 @@ class Home extends Component {
         console.log(topics)
         return (
             <div>
-                
+
             </div>
         )
     }

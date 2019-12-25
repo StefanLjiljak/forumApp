@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import Topic from './topic'
+import SendMessageForm from './SendMessageForm';
+
 
 const Topics= ()=> {
     
@@ -18,11 +20,13 @@ const Topics= ()=> {
     },[])
     
     return (
+        
         topics.map(topic => {
-        return (<Topic key={topic.topic_id} theme={topic.title} id={topic.topic_id}/>)
-        //<Link to='/TOPIC_ID'><p>{topic.title}</p></Link>
+        return (<><Topic key={topic.topic_id} theme={topic.title.toString()} id={topic.topic_id}/></>
+            )
+            
         })
-    )
+        )
 }
     
 

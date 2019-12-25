@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
+import SendMessageForm from './SendMessageForm'
 
 function Message(props) {  
 
@@ -8,7 +9,8 @@ function Message(props) {
         <div className="message">
             <span className="message-username">{props.username} - </span>
             <span className="message-text">{props.text} - </span>
-            <span className="message-text">{props.date}</span>
+            <span className="message-date">{props.date}</span>
+
 
         </div>
     )

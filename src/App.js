@@ -5,6 +5,7 @@ import Home from './components/home'
 import Topics from './components/topics'
 import MessageList from './components/messageList'
 import { Route, withRouter } from "react-router-dom";
+import SendMessageForm from './components/SendMessageForm'
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
         
           <Route path="/register" render={() => <Register/>} />
 
-          <Route path="/topics" render={() => <Topics/>} />
+          <Route path="/topics" render={() =><> <Topics/><SendMessageForm/></>} />
           <Route path="/topic/:topic_id" render={(props) => <MessageList {...props} />} />
           <Route exact path="/" render={() => <Home/>}/>
       </div>

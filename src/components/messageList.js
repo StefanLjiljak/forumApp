@@ -26,37 +26,21 @@ class MessageList extends React.Component {
 
     
     render() {
-       /* if (!this.props.roomId) {
-            return (
-                <div className="message-list">
-                    <div className="join-room">
-                        Join a room! &rarr; 
-                    </div>
-                </div>
-            )
-        }*/
         return (
             <>
+
             <div className="message-list">
                 {this.state.messages.map((message) => {
                     return (
-                        <Message key={message.message_id} username={message.username} text={message.message} 
+                        <>
+                        <Message key={message.message_id} username={message.username} text={message.message.toString()} 
                         date={message.timestamp}/>
+                        </>
                         
                     )
                 })}
             </div>
-            <form
-            onSubmit={this.handleSubmit}
-            className="send-message-form">
-            <input
-                disabled={this.props.disabled}
-                onChange={this.handleChange}
-                value={this.state.message}
-                placeholder="Type your message and hit ENTER"
-                type="text" />
-        </form>
-        </>
+            </>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import Message from './message'
+import SendMessageForm from './SendMessageForm';
 
 class Topic extends React.Component {
     constructor(){
@@ -25,12 +26,15 @@ class Topic extends React.Component {
 
     render(){
         return(
+            <>
             <div className='topic' onClick={(e)=>{
                 e.preventDefault();
                 this.setState({topic_id:this.props.match.params.topic_id})
                 this.chooseTheme();
             }}>{this.props.theme}
             </div>
+            </>
+
         )
     }
 }
