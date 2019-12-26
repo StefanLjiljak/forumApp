@@ -8,6 +8,8 @@ import { Route, withRouter } from "react-router-dom";
 import SendTopicForm from './components/SendTopicForm'
 import SendMessageForm from './components/SendMessageForm'
 import Message from './components/message'
+import './App.css'
+import topic from './components/topic'
 
 class App extends Component {
   render() {
@@ -18,7 +20,7 @@ class App extends Component {
           <Route path="/register" render={() => <Register/>} />
 
           <Route path="/topics" render={() =><> <Topics/><SendTopicForm/></>} />
-          <Route path="/topic/:topic_id" render={(props) =><> <MessageList {...props} /><SendMessageForm {...props}/></>} />
+    <Route path="/topic/:topic_id" render={(props) =><><SendMessageForm {...props}/> <MessageList {...props} /></>} />
           <Route exact path="/" render={() =><Home/> }/>
       </div>
     )

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import Topic from './topic'
-import SendMessageForm from './SendMessageForm';
 
 
 const Topics= ()=> {
