@@ -6,6 +6,7 @@ import axios from 'axios'
 class MessageList extends React.Component {
     constructor(props){
         super(props)
+        this.props = props;
         this.state={
             topic_id:this.props.match.params.topic_id,
             messages: []
@@ -33,7 +34,7 @@ class MessageList extends React.Component {
                     return (
                         <>
                         <Message key={message.message_id} username={message.username} text={message.message.toString()} 
-                        date={message.timestamp}/>
+                        date={message.timestamp} user_id={message.user_id} {...this.props}/>
                         </>
                         
                     )

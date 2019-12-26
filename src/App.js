@@ -10,6 +10,7 @@ import SendMessageForm from './components/SendMessageForm'
 import Message from './components/message'
 import './App.css'
 import topic from './components/topic'
+import Profile from './components/profile'
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path="/topics" render={() =><> <Topics/><SendTopicForm/></>} />
     <Route path="/topic/:topic_id" render={(props) =><><SendMessageForm {...props}/> <MessageList {...props} /></>} />
           <Route exact path="/" render={() =><Home/> }/>
+          <Route path="/profile/:user_id"  render={(props) => <Profile {...props}/>} />
       </div>
     )
   }

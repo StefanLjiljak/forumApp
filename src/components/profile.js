@@ -5,18 +5,18 @@ import axios from 'axios'
 const Profile = ({ match }) => {
     const [userID] = useState(match.params.user_id);
     const [user, setUser] = useState({});
-  ​
+  
     useEffect(() => {
-        axios.get(`https://coetus.herokuapp.com/api/forum/message/${userID}`)
+        axios.get(`https://coetus.herokuapp.com/api/forum/users/${userID}`)
         .then(data => {
-          if (data.success) {
-            setUser(data.user);
+          if (data.data.success) {
+            setUser(data.data.user);
           } else {
-            console.log(data);
+            console.log('user',data);
           }
         })
     }, [userID])
-  ​
+  console.log('userrr', user)
     return (
       <div className='container'>
         <span><strong>Username: </strong>{user.username}</span>
@@ -27,5 +27,5 @@ const Profile = ({ match }) => {
       </div>
     )
   }
-  ​
+  
   export default Profile;
