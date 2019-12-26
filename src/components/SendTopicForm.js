@@ -1,14 +1,13 @@
 import React from 'react'
 import Axios from 'axios'
 
-class SendMessageForm extends React.Component {
+class SendTopicForm extends React.Component {
     
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
-            username: '',
-            topic_id: this.props.match.params.topic_id,
-            message: ''
+            user_id: '',
+            title: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -16,17 +15,16 @@ class SendMessageForm extends React.Component {
     
     handleChange(e) {
         this.setState({
-            message: e.target.value
+            title: e.target.value
         })
     }
     
     handleSubmit(e) {
         e.preventDefault()
-        Axios.put('https://coetus.herokuapp.com/api/forum/message',
+        Axios.put('https://coetus.herokuapp.com/api/forum/topics',
         {
-            username: "jole",
-            topic_id:this.state.topic_id,
-            message:this.state.message,
+            user_id: "jole",
+            title:this.state.title,
             
         })
         .catch((error) => {
@@ -39,17 +37,17 @@ class SendMessageForm extends React.Component {
             <form
                 onSubmit={this.handleSubmit}
                 className="send-message-form">
-                    <h3>Add new message</h3>
+                    <h3>Add new topic</h3>
                 <input
                     disabled={this.props.disabled}
                     onChange={this.handleChange}
-                    value={this.state.message}
-                    placeholder="Type your message..."
+                    value={this.state.title}
+                    placeholder="Type your topic title..."
                     type="text" />
-                    <button>Add message</button>
+                    <button>Add topic</button>
             </form>
         )
     }
 }
 
-export default SendMessageForm
+export default SendTopicForm

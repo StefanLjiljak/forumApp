@@ -1,7 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import Message from './message'
-import SendMessageForm from './SendMessageForm';
 
 class Topic extends React.Component {
     constructor(){

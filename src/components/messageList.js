@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Message from './message'
 import axios from 'axios'
-import SendMessageForm from './SendMessageForm'
 
 class MessageList extends React.Component {
     constructor(props){
@@ -14,7 +13,7 @@ class MessageList extends React.Component {
 
         axios.get(`https://coetus.herokuapp.com/api/forum/message/${this.state.topic_id}`)
         .then((response) => {
-            console.log('fdf', response);
+            console.log('response', response);
             this.setState({...this.state, messages:response.data.messages})
         })
         .catch((error) => {

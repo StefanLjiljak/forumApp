@@ -22,7 +22,8 @@ const Topics= ()=> {
     return (
         
         topics.map(topic => {
-        return (<><Topic key={topic.topic_id} theme={topic.title.toString()} id={topic.topic_id}/></>
+        return (<><Topic key={topic.topic_id} theme={topic.title.toString()} id={topic.topic_id}/>
+        </>
             )
             
         })
